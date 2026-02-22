@@ -1,6 +1,15 @@
 from pydantic import BaseModel
 from typing import Optional, List
 
+class UserCreate(BaseModel):
+    full_name: str
+    email: str
+    phone: Optional[str] = None
+    password: str
+
+class UserLogin(BaseModel):
+    email: str
+    password: str
 class IssueCreate(BaseModel):
     title: str
     description: str           # ✅ correct field name from your DB
