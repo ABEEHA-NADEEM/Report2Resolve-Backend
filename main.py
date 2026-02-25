@@ -10,9 +10,6 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from schemas import IssueCreate, UserCreate, UserLogin, DepartmentSignup
 
-from mangum import Mangum
-handler = Mangum(app)
-
 load_dotenv()
 
 app = FastAPI()
@@ -546,3 +543,7 @@ def create_issue(issue: IssueCreate):
     except Exception as e:
         print(f"❌ Create issue error: {e}")
         return {"error": str(e)}
+    
+    
+from mangum import Mangum
+handler = Mangum(app)
