@@ -544,6 +544,3 @@ def create_issue(issue: IssueCreate):
         print(f"❌ Create issue error: {e}")
         return {"error": str(e)}
     
-    
-from mangum import Mangum
-handler = Mangum(app)
