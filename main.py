@@ -10,6 +10,9 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from schemas import IssueCreate, UserCreate, UserLogin, DepartmentSignup
 
+from mangum import Mangum
+handler = Mangum(app)
+
 load_dotenv()
 
 app = FastAPI()
